@@ -1,0 +1,202 @@
+---
+layout: page
+gh-repo: xavijuanola/vssl_eval_projectpage
+gh-badge: [star, watch, fork, follow]
+share-description: Official website of A Critical Assessment of Visual Sound Source Localization Models Including
+Negative Audio Input
+---
+
+<head>
+    <title>Critical Assessment of VSSL Models</title>
+    <!-- <style>
+        /* Custom container width to increase page width */
+        .custom-container {
+            max-width: 1200px;
+            /* Increase the width as per your needs */
+            margin: 0 auto;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 mx-auto text-center">
+                <h1>A Critical Assessment of Visual Sound Source Localization Models Including Negative Audio</h1>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <section class="testimonials text-center">
+            <div class="row justify-content-center">
+                <!-- Xavier Juanola -->
+                <div class="col-lg-4 text-center">
+                    <div class="testimonial-item mx-auto">
+                        <h3 style="white-space: nowrap;">
+                            <a href="http://xavijuanola.github.io/" style="text-decoration: none;">
+                                Xavier Juanola-Molet
+                            </a>
+                        </h3>
+                        <p><a href="mailto:xavier.juanola@upf.edu">xavier.juanola@upf.edu</a></p>
+                        <p>Universitat Pompeu Fabra,<br>Barcelona, Spain</p>
+                    </div>
+                </div>
+
+                <!-- Gloria Haro -->
+                <div class="col-lg-4 text-center">
+                    <div class="testimonial-item mx-auto">
+                        <h3 style="white-space: nowrap;">
+                            <a href="https://www.upf.edu/web/gloria-haro" style="text-decoration: none;">
+                                Gloria Haro
+                            </a>
+                        </h3>
+                        <p><a href="mailto:gloria.haro@upf.edu">gloria.haro@upf.edu</a></p>
+                        <p>Universitat Pompeu Fabra,<br>Barcelona, Spain</p>
+                    </div>
+                </div>
+
+                <!-- Magdalena Fuentes -->
+                <div class="col-lg-4 text-center">
+                    <div class="testimonial-item mx-auto">
+                        <h3 style="white-space: nowrap;">
+                            <a href="https://steinhardt.nyu.edu/people/magdalena-fuentes"
+                                style="text-decoration: none;">
+                                Magdalena Fuentes
+                            </a>
+                        </h3>
+                        <p><a href="mailto:mf3734@nyu.edu">mf3734@nyu.edu</a></p>
+                        <p>New York University,<br>New York City, USA</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </section>
+
+    <h5 class="mx-auto text-center" style="color: black">Submitted to ICASSP 2025</h5>
+    <h4 class="mx-auto text-center">
+        <a target="_blank" href="https://arxiv.org/abs/2410.01020">[Paper]</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" href="https://github.com/xavijuanola/vssl_eval">[Code]</a>
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+        <!-- <a target="_blank"
+            href="https://drive.google.com/file/d/11uQ900xNGOHAOpbT33rGXJuoYYV2RZec/view?usp=sharing">[Colab]</a> -->
+    </h4>
+    </div>
+
+    <br>
+    <h2 style="text-align: center">Abstract</h2>
+    <!-- <p class="lead mb-0" align="justify"> -->
+    <p class="lead mb-0" align="justify" style="margin-bottom: 30px;">
+        The task of Visual Sound Source Localization (VSSL) involves identifying the location of sound sources in visual
+        scenes, integrating audio-visual data for enhanced scene understanding. Despite advancements in state-of-the-art
+        (SOTA) models, we observe three critical flaws: i) The evaluation of the models is mainly focused on sounds
+        produced
+        by objects that are visible in the image, ii) The evaluation often assumes prior knowledge of the size of the
+        sounding object,
+        and iii) No universal threshold for localization in real-world scenarios is established, as previous approaches
+        only
+        consider positive examples without accounting for both positive and negative cases. In this paper, we introduce
+        a
+        novel
+        test set and metrics designed to complete the current standard evaluation of VSSL models by testing them in
+        scenarios
+        where none of the objects in the image correspond to the audio input, i.e., a negative audio. We consider three
+        types
+        of negative audio: silence, noise, and offscreen. Our analysis reveals that numerous SOTA models fail to
+        appropriately
+        adjust their predictions based on audio input, suggesting that these models may not be leveraging audio
+        information
+        as
+        intended. Additionally, we provide a comprehensive analysis of the range of maximum values in the estimated
+        audio-visual
+        similarity maps in both positive and negative audio cases, showing that most of the models are not
+        discriminative
+        enough,
+        making them unfit to choose a universal threshold appropriate to perform sound localization without any a priori
+        information about the sounding object, such as object size and visibility.
+    </p>
+    <br>
+
+    <!-- Add horizontal line here -->
+
+    <!-- _______________________________________________________________________________________________________________________________________________________________________________________ -->
+
+
+    <h2 style="text-align: center">Results</h2>
+    <!-- Before figure explanations -->
+    <p class="lead mb-0" align="justify" style="margin-bottom: 30px;">
+        The following figure shows a comparison between the visualization of the localization map used in previous
+        publications and the one proposed in this paper. The first row represents the old visualization, which
+        normalizes
+        the cosine similarity between the audio and image features and overlays the localization map over the original
+        image. To show the effect of the <b>Universal threshold</b> we set to zero the audio-visual similarity values
+        below
+        that threshold. The resulting values are then normalized to the range [0, 1] and they are combined with the
+        original
+        image.
+    </p>
+
+    <!-- Figure 1 with explanation -->
+    <div class="row justify-content-center" style="margin-bottom: 30px;">
+        <div style="text-align: center; width: 100%;">
+            <img class="round" src="assets/img/new_visualization.png"
+                style="width: 100%; height: auto; margin-bottom: 10px;">
+            <figcaption><b>Figure 1</b>: Comparison between the visualization used in previous methods and the one
+                proposed
+                in this publication using the <b>New Universal Threshold</b>.</figcaption>
+        </div>
+    </div>
+
+
+    <!-- The text between figures -->
+    <p class="lead mb-0" align="justify" style="margin-bottom: 30px;">
+        The following figures show the localization maps of the different models on the <i>male_ukulele_9253_male</i>,
+        <i>male_sheep_9215</i> and <i>trumpet_acousticguitar_6274</i> images
+        and the different audios (<i>Male</i>, <i>Ukulele</i>, <i>Sheep</i>, <i>Accoustic Guitar</i>, <i>Trumpet</i>,
+        <i>Silence</i>, <i>Noise</i>, and <i>Offscreen</i>).
+    </p>
+
+    <!-- Figure 2 with explanation -->
+    <div class="row justify-content-center" style="margin-bottom: 50px;">
+        <div style="text-align: center; max-width: 100%;">
+            <img class="round" src="assets/img/inferences_models.png" width="100%"
+                style="object-fit: contain; margin-bottom: 10px;">
+            <figcaption><b>Figure 4</b>: Model predictions for the images <i>male_ukulele_9253_male</i>,
+                <i>male_sheep_9215</i> and <i>trumpet_acousticguitar_6274</i> from the IS3 Dataset from the
+                different
+                models evaluated in the paper.
+            </figcaption>
+        </div>
+    </div>
+
+    <div class="mx-auto">
+        <br>
+        <h5>Acknowledgements</h5>
+        <p class="lead mb-0" align="justify" style="margin-bottom: 30px;">
+            The authors acknowledge support by the FPI scholarship PRE2022-101321, Maria de Maeztu CEX2021-001195-M/AEI/
+            10.13039/501100011033, MICINN/FEDER UE project ref. PID2021-127643NB-I00, Fulbright Program, and Ministerio
+            de
+            Universidades (Spain)
+            for mobility stays of professors and researchers in foreign higher education and research centers.
+        </p>
+    </div>
+
+    <div style="display: flex; flex-grow: 1; justify-content: space-between; margin-bottom: 30px;">
+        <img src="assets/img/Mdm.jpg" alt="María de Maeztu" style="height: 100px; width: auto;" />
+        <img src="assets/img/logo_ministerio.png" alt="Ministerio de Ciéncia e Innovación"
+            style="height: 100px; width: auto;" />
+        <img src="assets/img/Fulbright.png" alt="Fulbright" style="height: 100px; width: auto;" />
+        <img src="assets/img/ministerio_universidades.png" alt="Ministerio de Universidades"
+            style="height: 100px; width: auto;" />
+    </div>
+    <div style="display: flex; flex-grow: 1; justify-content: space-between;">
+        <img src="assets/img/upf.png" alt="Universitat Pompeu Fabra" style="height: 75px; width: auto;" />
+        <img src="assets/img/marl.png" alt="MARL" style="height: 85px; width: auto;" />
+        <img src="assets/img/nyu.png" alt="New York University" style="height: 75px; width: auto;" />
+    </div>
+</body>
